@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<Head>
+    <Title>Libreria</Title>
+    <meta charset="utf-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <style>
+        
+        .ordenarCo table {
+
+            width: 100%;
+            height: 100%;
+        }
+
+        .ordenarCos {
+            
+            margin-left: auto;
+            margin-right: auto;
+            float: left;
+        }
+
+        .ordenarCos li {
+
+            width: 100%;
+           
+        }
+
+        .ordenarCosa {
+           
+            margin-left: auto;
+            margin-right: auto;
+            float: left;
+            width: 71.1%;
+        }
+
+        .ordenarCosa li {
+            float: left;
+            width: 100%;
+         
+        }
+
+        .contacto {
+            float: left;
+            width: 100%;
+            height: 10%;
+        }
+
+        .contenedor2 {
+            float: right;
+            width: 100%;
+            height: 20%;
+        }
+        
+    </style>
+</Head>
+
+<Body>
+
+
+    <div class="p-3 mb-2 bg-light text-dark">
+        <p>
+        <div class="ordenarCo" id="tablas"></div>
+        <div class="ordenarCos">
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <!--Entregar Libros-->
+                    <center>
+                        <h3>Entregar Todos Los Libros</h3>
+                    </center><br>
+                    <button onClick="EntregarLibros()" class="btn btn-danger">Ejecutar</button>
+                </li>
+                <li class="list-group-item">
+                    <!-- Ver Libros Disponibles -->
+                    <center>
+                        <h3>Ver libros disponibles</h3>
+                    </center>
+                    <br>
+                    <button onClick="LibrosDisponibles()" class="btn btn-danger">Ejecutar</button>
+                </li>
+                <li class="list-group-item">
+                    <!--OrdenarDeMayorAMenor-->
+                    <center>
+                        <h3>Ordenar de mayor a menor</h3><br>
+                    </center>
+                    <button onClick="OrdenarDeMayorAMenor()" class="btn btn-danger">Ejecutar</button>
+                </li>
+                <li class="list-group-item">
+                    <!--EliminarUnLibro-->
+                    <center>
+                        <h3>Eliminar un libro</h3>
+                    </center>
+                    <label for="librosEscri2">Selecione el libro:</label><br>
+                    <div id="salidaLibros3" class="separarBotonesIzqui"></div>
+                    <button onClick="EliminarUnLibro()" class="btn btn-danger">Ejecutar</button>
+                </li>
+                <li class="list-group-item">
+                    <!--Ver Estado de un libro en particular-->
+                    <center>
+                        <h3>Ver estado de un libro</h3>
+                    </center>
+                    <label for="librosEscri4">Selecione el libro:</label><br>
+                    <p>
+                    <div id="salidaLibros4" class="separarBotonesIzqui"></div>
+                    <button onClick="EstadoParticularLibro()" class="btn btn-danger">Ejecutar</button></p>
+                </li>
+            </ul>
+        </div>
+        <div class="ordenarCosa">
+            <ul class="list-group">
+                <li class="list-group-item">
+
+                    <!-- Cambiar persona -->
+
+                    <center>
+                        <h2>Cambiar Poseedor de un libro</h2>
+                    </center><br><br>
+                    <label for="librosEscri">Selecione el libro</label>
+                    <div id="salidaLibros"></div>
+                    <br>
+                    <input class="input-group input-group-sm mb-3" type="text" id="cambiarPersona"
+                        placeholder="Ingrese el nuevo nombre">
+                    <button onClick="CambiarPersona()" class="btn btn-danger">Ejecutar</button>
+
+
+                </li>
+                <li class="list-group-item" id="NuevoContene2-Medio">
+                    <!--Eliminar Por consulta-->
+
+                    <center>
+                        <h2>Eliminar varios libros</h2>
+                    </center><br><br>
+
+                    <p><label for="SiEstan">Si están en la biblioteca</label>
+                        <input class="input-group input-group-sm mb-3" type="radio" id="SiEstan"
+                            name="EliminLibrosUsuario" value="siEstan">
+                    </p><br>
+
+
+                    <p><label for="NoEstan">No están en la biblioteca</label> <input
+                            class="input-group input-group-sm mb-3" type="radio" id="NoEstan" name="EliminLibrosUsuario"
+                            value="noEstan"></p>
+                    <br><br>
+
+                    <button onClick="EliminarPorConsulta()" class="btn btn-danger">Ejecutar</button>
+
+
+                </li>
+                <li class="list-group-item" id="NuevoContene2-Abajo">
+                    <!--Añadir Un libro-->
+
+                    <center>
+                        <h2>Añadir libros a la biblioteca</h2>
+                    </center><br><br>
+                    <label for="nuevLibroID">Ingrese el nombre del libro:</label><br><br>
+                    <input class="input-group input-group-sm mb-3" type="text" id="nuevLibroID"
+                        placeholder="Nuevo libro">
+                    <button onClick="AnadirLibro()" class="btn btn-danger">Ejecutar</button>
+
+                </li>
+            </ul>
+        </div>
+
+        </p>
+
+
+
+        <!-- Vectores Relacionados -->
+        <div class="contenedor2">
+            <h2>Historial de los socios de la biblioteca</h2>
+            <div class="separarBotonesIzqui">
+                <label for="salidaSocios">Socio:</label><br>
+                <div id="salidaSocios"></div>
+                <label for="librosDeVectoresRela">Selecione el libro:</label><br>
+                <div id="librosDeVectoresRela"></div><br><br>
+                <button onClick="guardarHistorial()" class="btn btn-danger">Ejecutar</button>
+
+            </div>
+            <div class="tablaDeSociosHistorial" id="sociosHistorialID"></div>
+
+        </div>
+
+
+
+
+
+        <div class="contacto">
+            <ul class="list-group">
+                <li class="list-group-item"><a href="https://twitter.com/OctavioCortez24"><img
+                            src="https://www.pagina12.com.ar/assets/media/assets/social/twitter-white.svg?v=2.0.41"
+                            alt=""></a> <a href="https://www.facebook.com/octavio.cortez.1804/"><img
+                            src="https://www.pagina12.com.ar/assets/media/assets/social/facebook-white.svg?v=2.0.41"
+                            alt=""></a></li>
+                <li class="list-group-item">Email: Oc31549@gmail.com</li>
+                <li class="list-group-item">Num: 2616551307</li>
+            </ul>
+        </div>
+    </div>
+
+
+
+    <script src="./BibliotecaJavaScript.js"></script>
+
+</Body>
+
+
+</html>
